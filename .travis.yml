@@ -14,6 +14,10 @@ addons:
 before_script:
   - heroku plugins:install salesforcedx
   - heroku force --help
+#  - heroku force:auth:jwt:grant --clientid $ConsumerKey
+  - echo $Test > text.crt
+  - cat text.crt
+
 
 # more docs here:
 # https://docs.travis-ci.com/user/migrating-from-legacy/#How-Do-I-Install-Custom-Software%3F
