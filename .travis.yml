@@ -1,0 +1,18 @@
+# use containers in Travis (instead of VMs)
+sudo: false
+
+# install Heroku CLI 
+# (based on https://github.com/travis-ci/apt-package-whitelist/issues/375)
+addons:
+  apt:
+    sources:
+      - heroku
+    packages:
+      - heroku-toolbelt
+      
+# install additional Heroku CLI plug-ins
+before_script:
+  - heroku plugins:install salesforcedx
+  
+# more docs here:
+# https://docs.travis-ci.com/user/migrating-from-legacy/#How-Do-I-Install-Custom-Software%3F
