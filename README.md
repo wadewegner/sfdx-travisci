@@ -1,11 +1,11 @@
 # sfdx-travisci
 
-This repository shows one way you can successfully setup Salesforce DX (Pilot) with Travis CI. I'm going to make a few assumptions in this README.
+This repository shows one way you can successfully setup Salesforce DX (Pilot) with Travis CI. I'm going to make a few assumptions in this README:
 
 - You are currently a part of the Salesforce DX Pilot. If you're not, you can [join the waitlist](http://go.pardot.com/l/27572/2017-01-23/6gh89x).
 - You know how to get your Github repository setup with Travis CI. (Here's their [Getting Started guide](https://docs.travis-ci.com/user/getting-started/).)
 - You've installed the [Travis CLI](https://github.com/travis-ci/travis.rb#installation). 
-- You have properly setup JWT-Based Authorization Flow (i.e. headless).
+- You have properly setup JWT-Based Authorization Flow (i.e. headless). I recommend using [these steps for generating your Self-Signed SSL Certificate](https://devcenter.heroku.com/articles/ssl-certificate-self). 
 
 If any any of these assumptions aren't true, the following steps won't work.
 
@@ -13,7 +13,7 @@ If any any of these assumptions aren't true, the following steps won't work.
 
 1) Make sure you have the Salesforce DX CLI installed. Check by running `sfdx force --help` and confirm you see the command output.
 
-2) Confirm you can perform a JWT-basd auth: `heroku force:auth:jwt:grant --clientid <your_consumer_key> --jwtkeyfile server.key --username <your_username> --setdefaultdevhubusername`
+2) Confirm you can perform a JWT-based auth: `heroku force:auth:jwt:grant --clientid <your_consumer_key> --jwtkeyfile server.key --username <your_username> --setdefaultdevhubusername`
 
 3) Create a Github repo called `sfdx-travisci`.
 
