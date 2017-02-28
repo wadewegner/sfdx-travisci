@@ -9,6 +9,7 @@ addons:
       - heroku
     packages:
       - heroku-toolbelt
+      - libsecret-tools
       
 before_install:
   - openssl aes-256-cbc -K $encrypted_939c08394e3d_key -iv $encrypted_939c08394e3d_iv -in server.key.enc -out server.key -d
