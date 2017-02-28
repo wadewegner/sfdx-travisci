@@ -14,7 +14,7 @@ addons:
 before_script:
   - heroku plugins:install salesforcedx
   - heroku force --help
-  - echo $Certificate > server.crt
+  - echo $CertificateKey > server.key
   - heroku force:auth:jwt:grant --clientid $ConsumerKey --jwtkeyfile server.key --username $Username --setdefaultdevhubusername
 
 
