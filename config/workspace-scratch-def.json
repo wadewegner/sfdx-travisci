@@ -1,0 +1,10 @@
+{
+  "Company": "wade.wegner Company",
+  "Country": "US",
+  "LastName": "wade.wegner",
+  "Email": "wade.wegner@xxx.com",
+  "Edition": "Developer",
+  "OrgPreferences" : {
+    "S1DesktopEnabled" : true
+  }
+}
