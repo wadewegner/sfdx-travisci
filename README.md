@@ -1,4 +1,4 @@
-# sfdx-travisci
+# sfdx-travisci [![Build Status](https://travis-ci.org/wadewegner/sfdx-travisci.svg?branch=master)](https://travis-ci.org/wadewegner/sfdx-travisci)
 
 This repository shows one way you can successfully setup Salesforce DX (Pilot) with Travis CI. I'm going to make a few assumptions in this README:
 
