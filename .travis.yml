@@ -1,13 +1,13 @@
 sudo: true
 
+env:
+  - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-v5.6.22-f9533ba-linux-amd64.tar.xz
+
 before_install:
   - openssl aes-256-cbc -K $encrypted_939c08394e3d_key -iv $encrypted_939c08394e3d_iv -in server.key.enc -out server.key -d
-  - wget https://developer.salesforce.com/media/salesforce-cli/sfdx-v5.6.22-f9533ba-linux-amd64.tar.xz
-  - tar -xJf sfdx-v5.6.22-f9533ba-linux-amd64.tar.xz
-  - cd heroku
-  - ./install
-  - export PATH=$(pwd):$PATH
-  - cd ..
+  - wget -qO- $URL | tar xzf -
+  - ./heroku/install
+  - export PATH=./heroku/$(pwd):$PATH
 
 # install additional Heroku CLI plug-ins
 before_script:
