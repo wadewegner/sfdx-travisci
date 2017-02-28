@@ -1,5 +1,5 @@
 # use containers in Travis (instead of VMs)
-sudo: false
+sudo: true
 
 # install Heroku CLI 
 # addons:
@@ -15,11 +15,12 @@ before_install:
   - tar -xvJf sfdx-v5.6.22-f9533ba-linux-amd64.tar.xz
   - cd heroku
   - ./install
+  - export PATH=$(pwd):$PATH
 
 # install additional Heroku CLI plug-ins
 before_script:
   - export SFDX_DISABLE_ENCRYPTION=true
-  - sfdx plugins:install salesforcedx
+#  - sfdx plugins:install salesforcedx
   - sfdx force --help
   - sfdx force:auth:jwt:grant --clientid $ConsumerKey --jwtkeyfile server.key --username $Username --setdefaultdevhubusername
 
