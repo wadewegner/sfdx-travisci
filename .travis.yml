@@ -13,6 +13,7 @@ addons:
 # install additional Heroku CLI plug-ins
 before_script:
   - heroku plugins:install salesforcedx
-  
+  - heroku force --help
+
 # more docs here:
 # https://docs.travis-ci.com/user/migrating-from-legacy/#How-Do-I-Install-Custom-Software%3F
