@@ -1,5 +1,5 @@
 # use containers in Travis (instead of VMs)
-sudo: true
+sudo: false
 
 # install Heroku CLI 
 # (based on https://github.com/travis-ci/apt-package-whitelist/issues/375)
@@ -9,13 +9,14 @@ addons:
       - heroku
     packages:
       - heroku-toolbelt
-      - libsecret-tools
+#      - libsecret-tools
       
 before_install:
   - openssl aes-256-cbc -K $encrypted_939c08394e3d_key -iv $encrypted_939c08394e3d_iv -in server.key.enc -out server.key -d
 
 # install additional Heroku CLI plug-ins
 before_script:
+  - export SFDX_DISABLE_ENCRYPTION=true
   - heroku plugins:install salesforcedx
   - heroku force --help
   - heroku force:auth:jwt:grant --clientid $ConsumerKey --jwtkeyfile server.key --username $Username --setdefaultdevhubusername
