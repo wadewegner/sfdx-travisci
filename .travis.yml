@@ -5,7 +5,7 @@ env:
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_939c08394e3d_key -iv $encrypted_939c08394e3d_iv -in server.key.enc -out server.key -d
-  - wget -qO- $URL | tar xzf -
+  - wget -qO- $URL | tar xJf -
   - ./heroku/install
   - export PATH=./heroku/$(pwd):$PATH
 
@@ -13,7 +13,7 @@ before_install:
 before_script:
   - export SFDX_DISABLE_ENCRYPTION=true
   - sfdx force --help
-  - sfdx force:auth:jwt:grant --clientid $ConsumerKey --jwtkeyfile server.key --username $Username --setdefaultdevhubusername
+  - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile server.key --username $USERNAME --setdefaultdevhubusername
 
 script:
   - sfdx force:org:list --verbose
