@@ -13,7 +13,7 @@ If any any of these assumptions aren't true, the following steps won't work.
 
 1) Make sure you have the Salesforce DX CLI installed. Check by running `sfdx force --help` and confirm you see the command output.
 
-2) Confirm you can perform a JWT-based auth: `heroku force:auth:jwt:grant --clientid <your_consumer_key> --jwtkeyfile server.key --username <your_username> --setdefaultdevhubusername`
+2) Confirm you can perform a JWT-based auth: `sfdx force:auth:jwt:grant --clientid <your_consumer_key> --jwtkeyfile server.key --username <your_username> --setdefaultdevhubusername`
 
 3) Create a Github repo called `sfdx-travisci`.
 
