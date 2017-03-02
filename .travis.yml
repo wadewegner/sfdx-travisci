@@ -9,7 +9,6 @@ before_install:
   - ./heroku/install
   - export PATH=./heroku/$(pwd):$PATH
 
-# install additional Heroku CLI plug-ins
 before_script:
   - export SFDX_DISABLE_ENCRYPTION=true
   - sfdx force --help
