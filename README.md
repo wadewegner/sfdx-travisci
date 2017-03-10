@@ -51,4 +51,3 @@ If you find any issues or opportunities for improving this respository, fix them
 ## Reporting Issues ###
 
 If you find any issues with this demo that you can't fix, feel free to report them in the [issues](https://github.com/wadewegner/sfdx-travisci/issues) section of this repository.
-
