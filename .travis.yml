@@ -15,8 +15,8 @@ before_script:
   - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key --username $USERNAME --setdefaultdevhubusername
 
 script:
-  - sfdx force:org:create -s -f config/workspace-scratch-def.json -a ciorg
-  - sfdx force:source:push -u ciorg
-  - sfdx force:apex:test:run -c -r human
+  - sfdx force:org:create -s -f config/workspace-scratch-def.json -a travisciorg
+  - sfdx force:source:push -u travisciorg
+  - sfdx force:apex:test:run -r tap
   - sleep 4m
-  - sfdx force:org:delete -u ciorg -p
+  - sfdx force:org:delete -u travisciorg -p
